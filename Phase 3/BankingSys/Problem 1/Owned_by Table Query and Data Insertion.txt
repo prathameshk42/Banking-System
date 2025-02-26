@@ -1,0 +1,40 @@
+QUERY
+
+
+
+CREATE TABLE Owned_by 
+(
+Customer_ID INT,
+AccountNumber INT,
+PRIMARY KEY (Customer_ID, AccountNumber),
+FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID),
+FOREIGN KEY (AccountNumber) REFERENCES Account(AccountNumber)
+);
+
+DATA
+
+
+
+
+INSERT INTO Owned_by (Customer_ID, AccountNumber)
+VALUES
+    (30006, 2001),
+    (30007, 2002),
+    (30008, 2003),
+    (30009, 2004),
+    (30010, 2005),
+    (30016, 2006),
+    (30017, 2007),
+    (30018, 2008),
+    (30019, 2009),
+    (30020, 2010),
+    (30021, 2011),
+    (30022, 2012),
+    (30023, 2013),
+    (30024, 2014),
+    (30025, 2015),
+    (30026, 2016),
+    (30027, 2017),
+    (30028, 2018),
+    (30029, 2019),
+    (30030, 2020);

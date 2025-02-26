@@ -1,0 +1,48 @@
+QUERY
+
+
+CREATE TABLE Customer 
+(
+Customer_ID INT PRIMARY KEY,
+Name VARCHAR(100),
+Address VARCHAR(255),
+Individual_Flag BOOLEAN,
+SSN VARCHAR(45),
+Business_Flag BOOLEAN,
+BusinessName VARCHAR(100),
+BusinessAddress VARCHAR(100),
+LoanNumber INT,
+Branch_id VARCHAR(50),
+BankerSSN VARCHAR(45) ,
+FOREIGN KEY (Branch_id) REFERENCES Branch(Branch_id),
+FOREIGN KEY (LoanNumber) REFERENCES Loan(LoanNumber),
+FOREIGN KEY (BankerSSN) REFERENCES Employee(SSN)
+);
+
+
+
+DATA
+
+
+INSERT INTO Customer (Customer_ID, Name, Address, Individual_Flag, SSN, Business_Flag, BusinessName, BusinessAddress, LoanNumber, Branch_id, BankerSSN)
+VALUES
+    (30006, 'Brown Enterprises', '404 Commerce Avenue, Brownsville', 0, '666-77-5839', 1, 'Brown Enterprises', '404 Commerce Avenue, Brownsville', 1016, 'B001', '876-54-3211'),
+    (30007, 'Johnson Investments', '505 Investment Road, Investortown', 0, '777-88-7520', 1, 'Johnson Investments', '505 Investment Road, Investortown', 1017, 'B002', '098-76-5433'),
+    (30008, 'White Holdings', '606 Business Lane, Whitetown', 0, '888-99-7451', 1, 'White Holdings', '606 Business Lane, Whitetown', 1018, 'B008', '654-32-1099'),
+    (30009, 'Taylor Ventures', '707 Commerce Street, Taylorville', 0, '999-00-1742', 1, 'Taylor Ventures', '707 Commerce Street, Taylorville', 1019, 'B006', '876-54-3211'),
+    (30010, 'Davis Investments', '808 Corporate Road, Investor City', 0, '123-45-8890', 1, 'Davis Investments', '808 Corporate Road, Investor City', 120, 'B005', '098-76-5432'),
+    (30016, 'Sophia Adams', '123 Pine Street, Anytown', TRUE, '111-22-8643', FALSE, NULL, NULL, 1001, 'B006', '444-55-6666'),
+    (30017, 'Liam Johnson', '456 Oak Drive, Cityville', TRUE, '222-33-7524', FALSE, NULL, NULL, 1002, 'B007', '555-66-7777'),
+    (30018, 'Ella Martinez', '789 Elm Avenue, Villageburg', TRUE, '333-44-9945', FALSE, NULL, NULL, 1003, 'B008', '666-77-8888'),
+    (30019, 'Carter Brown', '101 Cedar Lane, Hamlet City', TRUE, '444-55-7666', FALSE, NULL, NULL, 1004, 'B009', '777-88-9999'),
+    (30020, 'Aria Davis', '202 Elm Road, Riverside', TRUE, '555-66-7967', FALSE, NULL, NULL, 1005, 'B010', '888-99-0000'),
+    (30021, 'Logan Smith', '303 Maple Drive, Hilltop', TRUE, '666-77-8958', FALSE, NULL, NULL, 1006, 'B001', '999-00-1111'),
+    (30022, 'Grace Wilson', '404 Birch Street, Lakeside', TRUE, '777-88-9939', FALSE, NULL, NULL, 1007, 'B002', '123-45-6789'),
+    (30023, 'Jackson Taylor', '505 Walnut Lane, Parkside', TRUE, '888-99-3200', FALSE, NULL, NULL, 1008, 'B003', '234-56-7890'),
+    (30024, 'Lily Davis', '606 Pine Avenue, Brookville', TRUE, '999-00-1961', FALSE, NULL, NULL, 1009, 'B004', '345-67-8901'),
+    (30025, 'Elijah Miller', '707 Cedar Road, Mountainview', TRUE, '123-45-8529', FALSE, NULL, NULL, 1010, 'B005', '456-78-9012'),
+    (30026, 'Hannah Wilson', '808 Oak Street, Seaside', TRUE, '234-56-6990', FALSE, NULL, NULL, 1011, 'B006', '567-89-0123'),
+    (30027, 'Caleb Smith', '909 Elm Lane, Lakeshore', TRUE, '345-67-6191', FALSE, NULL, NULL, 1012, 'B007', '678-90-1234'),
+    (30028, 'Aaliyah Davis', '1011 Maple Drive, Hillcrest', TRUE, '456-78-8812', FALSE, NULL, NULL, 1013, 'B008', '789-01-2345'),
+    (30029, 'Benjamin Wilson', '1212 Birch Road, Valleyview', TRUE, '567-89-2023', FALSE, NULL, NULL, 1014, 'B009', '210-98-7654'),
+    (30030, 'Zoe Smith', '1313 Walnut Street, Brookside', TRUE, '678-90-1224', FALSE, NULL, NULL, 1015, 'B010', '109-87-6543');

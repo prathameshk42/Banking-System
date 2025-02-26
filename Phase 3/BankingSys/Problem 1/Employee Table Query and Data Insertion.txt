@@ -1,0 +1,64 @@
+QUERY
+
+
+CREATE TABLE Employee 
+(
+    
+    SSN VARCHAR(45) PRIMARY KEY,
+    EmployeeID INT,
+    Name VARCHAR(100),
+    Address VARCHAR(255),
+    Telephone VARCHAR(15),
+    StartDate DATE,
+    LengthOfEmployment INT,
+    ManagerSSN VARCHAR(45),
+    UNIQUE (EmployeeID),
+    FOREIGN KEY (ManagerSSN) REFERENCES Employee(SSN)
+);
+
+
+DATA
+
+
+INSERT INTO Employee (EmployeeID, SSN, Name, Address, Telephone, StartDate, LengthOfEmployment, ManagerSSN)
+    VALUES
+    (201, '111-22-3333', 'John Smith', '123 Main Street, Anytown', '555-123-4567', '2023-01-01', 3, NULL),
+    (202, '222-33-4444', 'Jane Doe', '456 Oak Avenue, Cityville', '555-234-5678', '2023-02-15', 2, '111-22-3333'),
+    (203, '333-44-5555', 'Michael Johnson', '789 Pine Road, Villageburg', '555-345-6789', '2023-03-30', 4, '111-22-3333'),
+    (204, '444-55-6666', 'Emily White', '101 Cedar Lane, Hamlet City', '555-456-7890', '2023-04-12', 5, '222-33-4444'),
+    (205, '555-66-7777', 'Daniel Brown', '202 Elm Street, Riverside', '555-567-8901', '2023-05-25', 3, '222-33-4444'),
+    (206, '666-77-8888', 'Sophia Miller', '303 Maple Drive, Hilltop', '555-678-9012', '2023-06-10', 4, '222-33-4444'),
+    (207, '777-88-9999', 'Matthew Wilson', '404 Birch Lane, Lakeside', '555-789-0123', '2023-07-18', 5, '222-33-4444'),
+    (208, '888-99-0000', 'Olivia Davis', '505 Walnut Street, Parkside', '555-890-1234', '2023-08-22', 3, '111-22-3333'),
+    (209, '999-00-1111', 'Ethan Jones', '606 Pine Avenue, Brookville', '555-901-2345', '2023-09-05', 4, '222-33-4444'),
+    (210, '123-45-6789', 'Ava Wilson', '707 Cedar Road, Mountainview', '555-012-3456', '2023-10-14', 5, '222-33-4444'),
+    (211, '234-56-7890', 'Noah Taylor', '808 Oak Street, Seaside', '555-123-4567', '2023-11-30', 3, '111-22-3333'),
+    (212, '345-67-8901', 'Emma Brown', '909 Elm Lane, Lakeshore', '555-234-5678', '2023-12-05', 4, '111-22-3333'),
+    (213, '456-78-9012', 'Liam Davis', '1011 Maple Drive, Hillcrest', '555-345-6789', '2024-01-19', 5, '222-33-4444'),
+    (214, '567-89-0123', 'Isabella Wilson', '1212 Birch Road, Valleyview', '555-456-7890', '2024-02-22', 3, '111-22-3333'),
+    (215, '678-90-1234', 'Mason Smith', '1313 Walnut Street, Brookside', '555-567-8901', '2024-03-08', 4, '222-33-4444'),
+    (216, '789-01-2345', 'Olivia Taylor', '1414 Pine Avenue, Ridgewood', '555-678-9012', '2024-04-14', 5, '222-33-4444'),
+    (217, '890-12-3456', 'Carter Davis', '1515 Cedar Lane, Meadowville', '555-789-0123', '2024-05-28', 3, '111-22-3333'),
+    (218, '901-23-4567', 'Avery Miller', '1616 Oak Street, Hilltop', '555-890-1234', '2024-06-03', 4, '222-33-4444'),
+    (219, '012-34-5678', 'Aria Wilson', '1717 Elm Drive, Lakeside', '555-901-2345', '2024-07-15', 5, '111-22-3333'),
+    (220, '987-65-4321', 'James Johnson', '1818 Walnut Road, Parkside', '555-012-3456', '2024-08-21', 3, NULL),
+    (221, '876-54-3210', 'Sophie Davis', '1919 Pine Street, Brookville', '555-123-4567', '2024-09-06', 4, '987-65-4321'),
+    (222, '765-43-2109', 'Logan Smith', '2020 Cedar Lane, Mountainview', '555-234-5678', '2024-10-13', 5, '987-65-4321'),
+    (223, '654-32-1098', 'Grace Wilson', '2121 Oak Avenue, Seaside', '555-345-6789', '2024-11-27', 3, '987-65-4321'),
+    (224, '543-21-0987', 'Jackson Taylor', '2222 Elm Road, Lakeshore', '555-456-7890', '2024-12-02', 4, '987-65-4321'),
+    (225, '432-10-9876', 'Lily Davis', '2323 Maple Drive, Hillcrest', '555-567-8901', '2025-01-16', 5, '987-65-4321'),
+    (226, '321-09-8765', 'Elijah Miller', '2424 Birch Lane, Valleyview', '555-678-9012', '2025-02-20', 3, '987-65-4321'),
+    (227, '210-98-7654', 'Hannah Wilson', '2525 Walnut Street, Brookside', '555-789-0123', '2025-03-07', 4, '987-65-4321'),
+    (228, '109-87-6543', 'Caleb Smith', '2626 Pine Avenue, Ridgewood', '555-890-1234', '2025-04-13', 5, '987-65-4321'),
+    (229, '098-76-5432', 'Aaliyah Davis', '2727 Cedar Road, Meadowville', '555-901-2345', '2025-05-26', 3, '987-65-4321'),
+    (230, '987-65-4322', 'Benjamin Wilson', '2828 Oak Street, Hilltop', '555-012-3456', '2025-06-01', 4, '987-65-4321'),
+    (231, '876-54-3211', 'Zoe Smith', '2929 Elm Drive, Lakeside', '555-123-4567', '2025-07-14', 5, '987-65-4321'),
+    (232, '765-43-2110', 'Christopher Davis', '3030 Walnut Lane, Parkside', '555-234-5678', '2025-08-20', 3, '987-65-4321'),
+    (233, '654-32-1099', 'Mia Wilson', '3131 Pine Street, Brookville', '555-345-6789', '2025-09-05', 4, '987-65-4321'),
+    (234, '543-21-0988', 'David Smith', '3232 Cedar Avenue, Seaside', '555-456-7890', '2025-10-12', 5, '987-65-4321'),
+    (235, '432-10-9877', 'Sophia Davis', '3333 Elm Lane, Lakeshore', '555-567-8901', '2025-11-26', 3, '987-65-4321'),
+    (236, '321-09-8766', 'Henry Miller', '3434 Birch Road, Valleyview', '555-678-9012', '2025-12-01', 4, '987-65-4321'),
+    (237, '210-98-7655', 'Ella Wilson', '3535 Walnut Street, Brookside', '555-789-0123', '2026-01-15', 5, '987-65-4321'),
+    (238, '109-87-6544', 'Owen Smith', '3636 Pine Lane, Ridgewood', '555-890-1234', '2026-02-19', 3, '987-65-4321'),
+    (239, '098-76-5433', 'Victoria Davis', '3737 Cedar Street, Meadowville', '555-901-2345', '2026-03-06', 4, '987-65-4321'),
+    (240, '987-65-4323', 'Gabriel Wilson', '3838 Oak Drive, Hilltop', '555-012-3456', '2026-04-11', 5, '987-65-4321');

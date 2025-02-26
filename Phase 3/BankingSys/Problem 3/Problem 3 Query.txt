@@ -1,0 +1,17 @@
+SELECT
+    E.SSN AS BankerSSN,
+    E.Name AS BankerName,
+    COUNT(C.Customer_ID) AS CustomerCount,
+    SUM(A.Balance) AS TotalBalance
+FROM
+    Employee E
+    JOIN Customer C ON E.SSN = C.BankerSSN
+    JOIN Owned_by O ON C.Customer_ID = O.Customer_ID
+    JOIN Account A ON O.AccountNumber = A.AccountNumber
+WHERE
+    C.Individual_Flag = TRUE -- Assuming individual customers
+GROUP BY
+    E.SSN, E.Name
+ORDER BY
+    TotalBalance DESC
+LIMIT 5;

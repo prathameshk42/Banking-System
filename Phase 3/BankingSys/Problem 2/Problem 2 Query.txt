@@ -1,0 +1,28 @@
+QUESTION 1 SOLUTION
+
+
+SELECT
+    B.Branch_id,
+    B.BranchName,
+    C.Customer_ID,
+    C.Name AS CustomerName,
+    C.Address AS CustomerAddress,
+    A.AccountNumber,
+    A.Balance,
+    L.LoanAmount
+FROM
+    Branch B
+    LEFT JOIN Customer C ON B.Branch_id = C.Branch_id
+    LEFT JOIN Owned_by O ON C.Customer_ID = O.Customer_ID
+    LEFT JOIN Account A ON O.AccountNumber = A.AccountNumber
+    LEFT JOIN Loan L ON C.LoanNumber = L.LoanNumber
+ORDER BY
+    B.Branch_id,
+    C.Customer_ID,
+    A.AccountNumber;
+
+
+
+
+
+

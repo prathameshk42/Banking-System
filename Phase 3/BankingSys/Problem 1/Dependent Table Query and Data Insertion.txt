@@ -1,0 +1,30 @@
+QUERY
+
+
+CREATE TABLE Dependent 
+(
+DependentName VARCHAR(100) PRIMARY KEY,
+Relationship VARCHAR(50),
+DOB DATE,
+EmployeeSSN VARCHAR(45),
+FOREIGN KEY (EmployeeSSN) REFERENCES Employee(SSN)
+);
+
+
+DATA
+
+
+
+
+INSERT INTO Dependent (DependentName, Relationship, DOB, EmployeeSSN)
+VALUES
+('Sophie Johnson', 'Daughter', '2001-03-15', '111-22-3333'),
+('Ethan Miller', 'Son', '1999-07-22', '222-33-4444'),
+('Ava Davis', 'Spouse', '1986-11-10', '333-44-5555'),
+('Logan White', 'Son', '2003-05-01', '444-55-6666'),
+('Olivia Brown', 'Daughter', '2000-09-18', '555-66-7777'),
+('Mason Miller', 'Son', '2005-01-30', '666-77-8888'),
+('Aria Wilson', 'Daughter', '2002-08-05', '777-88-9999'),
+('Carter Davis', 'Son', '1998-04-03', '888-99-0000'),
+('Liam Jones', 'Son', '2004-10-14', '999-00-1111'),
+('Zoe Wilson', 'Daughter', '1997-12-20', '123-45-6789');

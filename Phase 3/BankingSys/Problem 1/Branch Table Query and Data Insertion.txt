@@ -1,0 +1,27 @@
+
+QUERY
+
+CREATE TABLE Branch 
+(
+    Branch_id VARCHAR(50) PRIMARY KEY,
+    BranchName VARCHAR(50),
+    City VARCHAR(50),
+    Assets DECIMAL(15, 2)
+);
+
+
+DATA
+
+
+INSERT INTO Branch (Branch_ID, BranchName, City, Assets)
+VALUES
+    ('B001', 'Main Branch', 'New York', 1000000.00),
+    ('B002', 'Downtown Branch', 'Los Angeles', 800000.00),
+    ('B003', 'Uptown Branch', 'Chicago', 1200000.00),
+    ('B004', 'West Side Branch', 'San Francisco', 900000.00),
+    ('B005', 'Midtown Branch', 'Houston', 1100000.00),
+    ('B006', 'Southside Branch', 'Miami', 750000.00),
+    ('B007', 'Central Branch', 'Dallas', 850000.00),
+    ('B008', 'North Branch', 'Seattle', 950000.00),
+    ('B009', 'East Branch', 'Atlanta', 880000.00),
+    ('B010', 'Financial District Branch', 'New York', 1500000.00);

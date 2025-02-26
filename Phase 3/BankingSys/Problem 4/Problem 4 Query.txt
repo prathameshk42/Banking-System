@@ -1,0 +1,16 @@
+SELECT
+    O.AccountNumber,
+    B.Branch_id,
+    B.BranchName,
+    (L.LoanAmount - COALESCE(SUM(LP.Amount), 0)) AS AmountOwed
+FROM
+    Owned_by O
+    JOIN Customer C ON O.Customer_ID = C.Customer_ID
+    JOIN Loan L ON C.LoanNumber = L.LoanNumber
+    JOIN Branch B ON L.Branch_id = B.Branch_id
+    LEFT JOIN LoanPayment LP ON L.LoanNumber = LP.LoanNumber
+GROUP BY
+    O.AccountNumber, B.Branch_id, B.BranchName, L.LoanAmount
+ORDER BY
+    AmountOwed DESC
+LIMIT 5;

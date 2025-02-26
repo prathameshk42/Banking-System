@@ -1,0 +1,42 @@
+QUERY
+
+
+
+CREATE TABLE Account 
+(
+    AccountNumber INT PRIMARY KEY,
+    Balance DECIMAL(15, 2),
+    LastAccessDate DATE,
+    AccountType ENUM('Checking', 'Savings'),
+    Overdraft DECIMAL(15, 2),  -- Only applicable for Checking accounts
+    InterestRate DECIMAL(5, 4) -- Only applicable for Savings accounts
+);
+
+
+
+DATA
+
+
+
+INSERT INTO Account (AccountNumber, Balance, LastAccessDate, AccountType, Overdraft, InterestRate)
+VALUES
+    (2001, 5000.00, '2023-01-05', 'Checking', 1000.00, NULL),
+    (2002, 8000.00, '2023-02-20', 'Savings', NULL, 0.025),
+    (2003, 12000.00, '2023-03-31', 'Checking', 1500.00, NULL),
+    (2004, 6000.00, '2023-04-15', 'Savings', NULL, 0.03),
+    (2005, 9000.00, '2023-05-28', 'Checking', 1200.00, NULL),
+    (2006, 11000.00, '2023-06-12', 'Savings', NULL, 0.02),
+    (2007, 8000.00, '2023-07-20', 'Checking', 1000.00, NULL),
+    (2008, 10000.00, '2023-08-25', 'Savings', NULL, 0.035),
+    (2009, 9500.00, '2023-09-08', 'Checking', 1300.00, NULL),
+    (2010, 15000.00, '2023-10-17', 'Savings', NULL, 0.028),
+    (2011, 7000.00, '2023-11-30', 'Checking', 1100.00, NULL),
+    (2012, 8500.00, '2023-12-15', 'Savings', NULL, 0.022),
+    (2013, 12000.00, '2024-01-30', 'Checking', 1400.00, NULL),
+    (2014, 5500.00, '2024-02-12', 'Savings', NULL, 0.032),
+    (2015, 10000.00, '2024-03-15', 'Checking', 900.00, NULL),
+    (2016, 10000.00, '2024-03-15', 'Checking', 600.00, NULL),
+    (2017, 15000.00, '2024-03-15', 'Savings', NULL, 0.038),
+    (2018, 19000.00, '2024-03-15', 'Checking', 1400.00, NULL),
+    (2019, 18000.00, '2024-03-15', 'Savings', NULL, 0.036),
+    (2020, 17000.00, '2024-03-15', 'Checking', 1200.00, NULL);

@@ -1,0 +1,35 @@
+QUERY
+
+
+CREATE TABLE Loan 
+(
+    
+    LoanNumber INT PRIMARY KEY,
+    Branch_id VARCHAR(50),
+    LoanAmount DECIMAL(15, 2),
+    BranchName VARCHAR(50),
+    FOREIGN KEY (Branch_id) REFERENCES Branch(Branch_id)
+);
+
+
+DATA
+
+
+
+INSERT INTO Loan (LoanNumber, Branch_id, LoanAmount, BranchName)
+VALUES
+    (1001, 'B001', 50000.00, 'Main Branch'),
+    (1002, 'B002', 75000.00, 'Downtown Branch'),
+    (1003, 'B003', 100000.00, 'Uptown Branch'),
+    (1004, 'B004', 60000.00, 'West Side Branch'),
+    (1005, 'B005', 90000.00, 'Midtown Branch'),
+    (1006, 'B006', 120000.00, 'Southside Branch'),
+    (1007, 'B007', 80000.00, 'Central Branch'),
+    (1008, 'B008', 110000.00, 'North Branch'),
+    (1009, 'B009', 95000.00, 'East Branch'),
+    (1010, 'B010', 150000.00, 'Financial District Branch'),
+    (1011, 'B001', 70000.00, 'Main Branch'),
+    (1012, 'B002', 85000.00, 'Downtown Branch'),
+    (1013, 'B003', 120000.00, 'Uptown Branch'),
+    (1014, 'B004', 55000.00, 'West Side Branch'),
+    (1015, 'B005', 100000.00, 'Midtown Branch');
